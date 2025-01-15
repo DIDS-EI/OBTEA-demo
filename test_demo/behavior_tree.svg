@@ -9,105 +9,105 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 343.9)">
 <title>pastafarianism</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-343.9 421.99,-343.9 421.99,4 -4,4"/>
-<!-- 995a04c0&#45;32a7&#45;469a&#45;9006&#45;e4ed377d5c85 -->
+<!-- 94696d88&#45;dadd&#45;454f&#45;ab8e&#45;8d6e7af77001 -->
 <g id="node1" class="node">
-<title>995a04c0&#45;32a7&#45;469a&#45;9006&#45;e4ed377d5c85</title>
+<title>94696d88&#45;dadd&#45;454f&#45;ab8e&#45;8d6e7af77001</title>
 <polygon fill="#b0ffff" stroke="black" points="194.99,-339.9 159.49,-339.9 159.49,-309.4 194.99,-309.4 194.99,-339.9"/>
 <text text-anchor="middle" x="177.24" y="-316.9" font-family="Times New Roman,serif" font-size="20.00"> ? </text>
 </g>
-<!-- 5eebd241&#45;f214&#45;4426&#45;b8cc&#45;f52a9f0e3068 -->
+<!-- 93beb8ea&#45;ffb6&#45;4378&#45;8d5d&#45;3a43def151e1 -->
 <g id="node2" class="node">
-<title>5eebd241&#45;f214&#45;4426&#45;b8cc&#45;f52a9f0e3068</title>
+<title>93beb8ea&#45;ffb6&#45;4378&#45;8d5d&#45;3a43def151e1</title>
 <ellipse fill="#ffff80" stroke="black" cx="106.24" cy="-251.83" rx="106.24" ry="21.57"/>
 <text text-anchor="middle" x="106.24" y="-244.08" font-family="Times New Roman,serif" font-size="20.00">IsHolding(apple)</text>
 </g>
-<!-- 995a04c0&#45;32a7&#45;469a&#45;9006&#45;e4ed377d5c85&#45;&gt;5eebd241&#45;f214&#45;4426&#45;b8cc&#45;f52a9f0e3068 -->
+<!-- 94696d88&#45;dadd&#45;454f&#45;ab8e&#45;8d6e7af77001&#45;&gt;93beb8ea&#45;ffb6&#45;4378&#45;8d5d&#45;3a43def151e1 -->
 <g id="edge1" class="edge">
-<title>995a04c0&#45;32a7&#45;469a&#45;9006&#45;e4ed377d5c85&#45;&gt;5eebd241&#45;f214&#45;4426&#45;b8cc&#45;f52a9f0e3068</title>
+<title>94696d88&#45;dadd&#45;454f&#45;ab8e&#45;8d6e7af77001&#45;&gt;93beb8ea&#45;ffb6&#45;4378&#45;8d5d&#45;3a43def151e1</title>
 <path fill="none" stroke="black" d="M162.53,-308.98C154.55,-301.02 144.41,-290.9 134.94,-281.45"/>
 <polygon fill="black" stroke="black" points="137.48,-279.05 127.93,-274.46 132.54,-284 137.48,-279.05"/>
 </g>
-<!-- ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f -->
+<!-- 13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095 -->
 <g id="node3" class="node">
-<title>ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f</title>
+<title>13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095</title>
 <polygon fill="#ff8080" stroke="black" points="266.37,-267.08 230.12,-267.08 230.12,-236.58 266.37,-236.58 266.37,-267.08"/>
 <text text-anchor="middle" x="248.24" y="-244.08" font-family="Times New Roman,serif" font-size="20.00">→</text>
 </g>
-<!-- 995a04c0&#45;32a7&#45;469a&#45;9006&#45;e4ed377d5c85&#45;&gt;ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f -->
+<!-- 94696d88&#45;dadd&#45;454f&#45;ab8e&#45;8d6e7af77001&#45;&gt;13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095 -->
 <g id="edge2" class="edge">
-<title>995a04c0&#45;32a7&#45;469a&#45;9006&#45;e4ed377d5c85&#45;&gt;ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f</title>
+<title>94696d88&#45;dadd&#45;454f&#45;ab8e&#45;8d6e7af77001&#45;&gt;13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095</title>
 <path fill="none" stroke="black" d="M191.95,-308.98C201.66,-299.29 214.58,-286.41 225.59,-275.43"/>
 <polygon fill="black" stroke="black" points="227.87,-278.1 232.48,-268.56 222.93,-273.14 227.87,-278.1"/>
 </g>
-<!-- 1e36da08&#45;e71f&#45;414c&#45;91cb&#45;8a24201ad524 -->
+<!-- d8fafb2e&#45;ea0e&#45;4ccc&#45;829a&#45;b6f9e94a7960 -->
 <g id="node4" class="node">
-<title>1e36da08&#45;e71f&#45;414c&#45;91cb&#45;8a24201ad524</title>
+<title>d8fafb2e&#45;ea0e&#45;4ccc&#45;829a&#45;b6f9e94a7960</title>
 <ellipse fill="#ffff80" stroke="black" cx="181.24" cy="-172.7" rx="98.29" ry="21.57"/>
 <text text-anchor="middle" x="181.24" y="-164.95" font-family="Times New Roman,serif" font-size="20.00">IsHandEmpty()</text>
 </g>
-<!-- ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f&#45;&gt;1e36da08&#45;e71f&#45;414c&#45;91cb&#45;8a24201ad524 -->
+<!-- 13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095&#45;&gt;d8fafb2e&#45;ea0e&#45;4ccc&#45;829a&#45;b6f9e94a7960 -->
 <g id="edge3" class="edge">
-<title>ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f&#45;&gt;1e36da08&#45;e71f&#45;414c&#45;91cb&#45;8a24201ad524</title>
+<title>13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095&#45;&gt;d8fafb2e&#45;ea0e&#45;4ccc&#45;829a&#45;b6f9e94a7960</title>
 <path fill="none" stroke="black" d="M235.64,-236.33C227.42,-226.87 216.42,-214.19 206.45,-202.72"/>
 <polygon fill="black" stroke="black" points="209.29,-200.65 200.09,-195.4 204.01,-205.24 209.29,-200.65"/>
 </g>
-<!-- 56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef -->
+<!-- 725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341 -->
 <g id="node5" class="node">
-<title>56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef</title>
+<title>725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341</title>
 <polygon fill="#b0ffff" stroke="black" points="332.99,-187.95 297.49,-187.95 297.49,-157.45 332.99,-157.45 332.99,-187.95"/>
 <text text-anchor="middle" x="315.24" y="-164.95" font-family="Times New Roman,serif" font-size="20.00"> ? </text>
 </g>
-<!-- ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f&#45;&gt;56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef -->
+<!-- 13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095&#45;&gt;725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341 -->
 <g id="edge4" class="edge">
-<title>ffcb92c4&#45;cb72&#45;433d&#45;8c5b&#45;7949611bde4f&#45;&gt;56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef</title>
+<title>13a1e0cc&#45;9518&#45;436e&#45;9afb&#45;b7db32f5d095&#45;&gt;725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341</title>
 <path fill="none" stroke="black" d="M260.84,-236.33C270.52,-225.19 284.06,-209.6 295.21,-196.77"/>
 <polygon fill="black" stroke="black" points="297.56,-199.39 301.48,-189.55 292.28,-194.8 297.56,-199.39"/>
 </g>
-<!-- e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99 -->
+<!-- a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72 -->
 <g id="node6" class="node">
-<title>e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99</title>
+<title>a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72</title>
 <polygon fill="#ff8080" stroke="black" points="286.37,-112.38 250.12,-112.38 250.12,-81.88 286.37,-81.88 286.37,-112.38"/>
 <text text-anchor="middle" x="268.24" y="-89.38" font-family="Times New Roman,serif" font-size="20.00">→</text>
 </g>
-<!-- 56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef&#45;&gt;e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99 -->
+<!-- 725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341&#45;&gt;a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72 -->
 <g id="edge5" class="edge">
-<title>56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef&#45;&gt;e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99</title>
+<title>725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341&#45;&gt;a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72</title>
 <path fill="none" stroke="black" d="M305.96,-157.17C299.58,-147.19 290.98,-133.72 283.59,-122.16"/>
 <polygon fill="black" stroke="black" points="286.66,-120.46 278.32,-113.91 280.76,-124.22 286.66,-120.46"/>
 </g>
-<!-- eb112423&#45;682c&#45;402f&#45;8a43&#45;5ee84d67fee8 -->
+<!-- 9ddbfd74&#45;1a19&#45;4917&#45;b16d&#45;daa900348f5c -->
 <g id="node9" class="node">
-<title>eb112423&#45;682c&#45;402f&#45;8a43&#45;5ee84d67fee8</title>
+<title>9ddbfd74&#45;1a19&#45;4917&#45;b16d&#45;daa900348f5c</title>
 <polygon fill="lightgreen" stroke="black" points="417.99,-115.13 304.49,-115.13 304.49,-79.13 417.99,-79.13 417.99,-115.13"/>
 <text text-anchor="middle" x="361.24" y="-89.38" font-family="Times New Roman,serif" font-size="20.00">Walk(apple)</text>
 </g>
-<!-- 56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef&#45;&gt;eb112423&#45;682c&#45;402f&#45;8a43&#45;5ee84d67fee8 -->
+<!-- 725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341&#45;&gt;9ddbfd74&#45;1a19&#45;4917&#45;b16d&#45;daa900348f5c -->
 <g id="edge8" class="edge">
-<title>56541358&#45;b25e&#45;4752&#45;bddf&#45;4f55bdc2fcef&#45;&gt;eb112423&#45;682c&#45;402f&#45;8a43&#45;5ee84d67fee8</title>
+<title>725586bb&#45;3238&#45;4ae0&#45;8d3f&#45;bab1aac92341&#45;&gt;9ddbfd74&#45;1a19&#45;4917&#45;b16d&#45;daa900348f5c</title>
 <path fill="none" stroke="black" d="M324.33,-157.17C330.06,-148 337.64,-135.87 344.44,-125"/>
 <polygon fill="black" stroke="black" points="347.26,-127.1 349.59,-116.77 341.32,-123.39 347.26,-127.1"/>
 </g>
-<!-- 5a300bd2&#45;b12f&#45;48e7&#45;b16b&#45;4e659091bfdc -->
+<!-- bd311d78&#45;5677&#45;410e&#45;9c02&#45;49e8be60dd56 -->
 <g id="node7" class="node">
-<title>5a300bd2&#45;b12f&#45;48e7&#45;b16b&#45;4e659091bfdc</title>
+<title>bd311d78&#45;5677&#45;410e&#45;9c02&#45;49e8be60dd56</title>
 <ellipse fill="#ffff80" stroke="black" cx="185.24" cy="-21.57" rx="88.74" ry="21.57"/>
 <text text-anchor="middle" x="185.24" y="-13.82" font-family="Times New Roman,serif" font-size="20.00">IsNear(apple)</text>
 </g>
-<!-- e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99&#45;&gt;5a300bd2&#45;b12f&#45;48e7&#45;b16b&#45;4e659091bfdc -->
+<!-- a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72&#45;&gt;bd311d78&#45;5677&#45;410e&#45;9c02&#45;49e8be60dd56 -->
 <g id="edge6" class="edge">
-<title>e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99&#45;&gt;5a300bd2&#45;b12f&#45;48e7&#45;b16b&#45;4e659091bfdc</title>
+<title>a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72&#45;&gt;bd311d78&#45;5677&#45;410e&#45;9c02&#45;49e8be60dd56</title>
 <path fill="none" stroke="black" d="M251.84,-81.6C241.73,-72.64 228.43,-60.85 216.38,-50.17"/>
 <polygon fill="black" stroke="black" points="218.83,-47.66 209.02,-43.64 214.19,-52.9 218.83,-47.66"/>
 </g>
-<!-- 2396bef8&#45;c4d3&#45;4abf&#45;9561&#45;ae7732f48ce0 -->
+<!-- 1c4de367&#45;78d7&#45;4d45&#45;bd24&#45;15927e7e8fdb -->
 <g id="node8" class="node">
-<title>2396bef8&#45;c4d3&#45;4abf&#45;9561&#45;ae7732f48ce0</title>
+<title>1c4de367&#45;78d7&#45;4d45&#45;bd24&#45;15927e7e8fdb</title>
 <polygon fill="lightgreen" stroke="black" points="410.99,-39.57 291.49,-39.57 291.49,-3.57 410.99,-3.57 410.99,-39.57"/>
 <text text-anchor="middle" x="351.24" y="-13.82" font-family="Times New Roman,serif" font-size="20.00">Grasp(apple)</text>
 </g>
-<!-- e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99&#45;&gt;2396bef8&#45;c4d3&#45;4abf&#45;9561&#45;ae7732f48ce0 -->
+<!-- a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72&#45;&gt;1c4de367&#45;78d7&#45;4d45&#45;bd24&#45;15927e7e8fdb -->
 <g id="edge7" class="edge">
-<title>e78b29a2&#45;66c7&#45;4e7e&#45;bff1&#45;28030661dc99&#45;&gt;2396bef8&#45;c4d3&#45;4abf&#45;9561&#45;ae7732f48ce0</title>
+<title>a6b95e72&#45;13aa&#45;4994&#45;afe5&#45;f8aa806f1e72&#45;&gt;1c4de367&#45;78d7&#45;4d45&#45;bd24&#45;15927e7e8fdb</title>
 <path fill="none" stroke="black" d="M284.64,-81.6C295.62,-71.87 310.35,-58.81 323.17,-47.45"/>
 <polygon fill="black" stroke="black" points="325.37,-50.17 330.53,-40.92 320.73,-44.94 325.37,-50.17"/>
 </g>
