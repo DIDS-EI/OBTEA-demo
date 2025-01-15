@@ -1,5 +1,7 @@
     
 # LLM-OBTEA: Integrating Intent Understanding and Optimal Behavior Planning for Behavior Tree Generation from Human instructions (IJCAI 2024)
+![Python Version](images/python310.svg)
+![GitHub license](images/license.svg)
 
 ✨️ We have uploaded the slim version at `https://github.com/DIDS-EI/OBTEA-demo`. If you want to generate a BT file for a custom task, you can refer to `OBTEA-demo/test_demo/run_demo_task.py`.
 1. First, create your own environment under `OBTEA-demo\btpg\envs`, such as `DemoEasy`. The key is to establish the action classes and condition classes in `exec_lib`. Pay attention to the preconditions (`pre`), additions (`add`), deletions (`del`), and their optional parameters for each action.
@@ -8,8 +10,6 @@
 4. To draw the BT, you need the `.btml` file and the imported `behavior_lib`.
 We will continue to update and maintain this project, so stay tuned!
 
-![Python Version](images/python310.svg)
-![GitHub license](images/license.svg)
 
 ______________________________________________________________________
 ![](images/framework.png)
