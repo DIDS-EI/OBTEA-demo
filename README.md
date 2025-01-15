@@ -1,17 +1,21 @@
     
 # LLM-OBTEA: Integrating Intent Understanding and Optimal Behavior Planning for Behavior Tree Generation from Human instructions (IJCAI 2024)
-
-A Platform and Benchmark for Behavior Tree Planning in Everyday Service Robots. Based on RoboWaiter and [VirtualHome](http://virtual-home.org/) v2.3.0
-<div align="center">
-
-[[Website]](https://dids-ei.github.io/Project/BTPG/)
-
 ![Python Version](images/python310.svg)
 ![GitHub license](images/license.svg)
 
+✨️ We have uploaded the slim version at `https://github.com/DIDS-EI/OBTEA-demo`. If you want to generate a BT file for a custom task, you can refer to `OBTEA-demo/test_demo/run_demo_task.py`.
+1. First, create your own environment under `OBTEA-demo\btpg\envs`, such as `DemoEasy`. The key is to establish the action classes and condition classes in `exec_lib`. Pay attention to the preconditions (`pre`), additions (`add`), deletions (`del`), and their optional parameters for each action.
+2. In the main function `run_demo_task.py`, provide the path to `exec_lib` to import `behavior_lib`.
+3. Before running the BT algorithm, specify the goal and the current state `cur_cond_set`.
+4. To draw the BT, you need the `.btml` file and the imported `behavior_lib`.
+We will continue to update and maintain this project, so stay tuned!
+
+
 ______________________________________________________________________
 ![](images/framework.png)
-</div>
+
+______________________________________________________________________
+
 ## 🛠️ Installation
 
 ### Create a conda environment
@@ -78,6 +82,8 @@ test_exp - Testing modules for behavior trees planning, LLMs, and scene environm
 ```python
 python test_exp/main.py
 ```
+
+
 
 ## 📖 Getting Started
 HOBTEA uses OpenAI's GPT-3.5 as the language model. You need to have an OpenAI API key to use HOBTEA. You can get one from [here](https://platform.openai.com/account/api-keys).
