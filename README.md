@@ -13,7 +13,9 @@ We will continue to update and maintain this project, so stay tuned!
 
 ______________________________________________________________________
 ![](images/framework.png)
-</div>
+
+______________________________________________________________________
+
 ## 🛠️ Installation
 
 ### Create a conda environment
