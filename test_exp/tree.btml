@@ -1,41 +1,9 @@
 selector
+    cond IsHolding(apple)
     sequence
-        cond IsClose(fridge)
-        cond IsIn(bananas,fridge)
-    sequence
-        cond IsLeftHandEmpty(self)
+        cond IsHandEmpty()
         selector
-            selector
-                selector
-                    sequence
-                        cond IsNear(self,fridge)
-                        selector
-                            sequence
-                                cond IsOpen(fridge)
-                                selector
-                                    sequence
-                                        cond IsIn(bananas,fridge)
-                                        act Close(fridge)
-                                    sequence
-                                        cond IsRightHolding(self,bananas)
-                                        act RightPutIn(bananas,fridge)
-                            sequence
-                                cond IsClose(fridge)
-                                cond IsRightHolding(self,bananas)
-                                act Open(fridge)
-                    sequence
-                        cond IsClose(fridge)
-                        cond IsStanding(self)
-                        cond IsRightHolding(self,bananas)
-                        act Walk(fridge)
-                sequence
-                    cond IsNear(self,bananas)
-                    cond IsStanding(self)
-                    cond IsRightHandEmpty(self)
-                    cond IsClose(fridge)
-                    act RightGrab(bananas)
             sequence
-                cond IsStanding(self)
-                cond IsRightHandEmpty(self)
-                cond IsClose(fridge)
-                act Walk(bananas)
+                cond IsNear(apple)
+                act Grasp(apple)
+            act Walk(apple)

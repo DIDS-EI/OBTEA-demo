@@ -1,6 +1,6 @@
 import time
 
-from btpg.envs.VirtualHome.simulation.unity_simulator import UnityCommunication
+# from btpg.envs.VirtualHome.simulation.unity_simulator import UnityCommunication
 
 from btpg.behavior_tree.behavior_libs import ExecBehaviorLibrary
 from btpg.utils import ROOT_PATH

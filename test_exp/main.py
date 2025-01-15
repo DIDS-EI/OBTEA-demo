@@ -1,23 +1,9 @@
 import time
 
-import btpg
 from btpg.algos.llm_client.tools import goal_transfer_str
 from btpg.algos.bt_planning.main_interface import BTExpInterface
 from btpg.utils.tools import *
-from btpg.utils.goal_generator.vh_gen import VirtualHomeGoalGen
 
-
-max_goal_num=5
-diffcult_type= "mix" #"single"  #"mix" "multi"
-scene = "VH" # RH RHS RW
-
-# ===================== VirtualHome ========================
-goal_gen = VirtualHomeGoalGen()
-goal_ls = goal_gen.random_generate_goals(max_goal_num ,diffcult_type=diffcult_type)
-for goal in goal_ls:
-    print(goal)
-
-env, cur_cond_set = setup_environment(scene)
 
 
 def run_easy_demo():
@@ -93,21 +79,21 @@ def run_hard_demo():
 # 定义演示字典
 demos = {
     1: {
-        'name': 'Easy Demo',
+        'name': 'Easy test_demo',
         'description': '简单的任务规划演示。',
         "tasks": "请将香蕉放入冰箱，并确保冰箱门关闭" ,
         'Goal': 'IsIn_bananas_fridge & IsClose_fridge',
         'function': run_easy_demo
     },
     2: {
-        'name': 'Medium Demo',
+        'name': 'Medium test_demo',
         'description': '中等难度的任务规划演示。',
         'tasks': '将鸡肉和磅蛋糕放入烤箱，并确保烤炉门关闭以及烤炉开启' ,
         'Goal': 'IsIn_chicken_stove & IsIn_poundcake_stove & IsClose_stove & IsSwitchedOn_stove',
         'function': run_medium_demo
     },
     3: {
-        'name': 'Hard Demo',
+        'name': 'Hard test_demo',
         'description': '困难的任务规划演示。',
         'tasks': '请将衣物堆叠在床上，将书籍放在桌子上，将调料瓶放入厨房橱柜中，并确保橱柜门关闭',
         'Goal': '(IsOn_clothespile_bed & IsOn_book_desk & IsIn_condimentshaker_kitchencabinet & IsClose_kitchencabinet)',
@@ -115,7 +101,11 @@ demos = {
     }
 }
 
-# 用户选择 Demo
+
+scene = "VH"
+env, cur_cond_set = setup_environment(scene)
+
+# 用户选择 test_demo
 print("请选择一个演示：")
 for key, value in demos.items():
     print(f"{key}. {value['name']} - {value['description']} - {value['tasks']}.")

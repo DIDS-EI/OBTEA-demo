@@ -7,8 +7,8 @@ from btpg.behavior_tree.behavior_libs import ExecBehaviorLibrary
 
 from btpg.utils import ROOT_PATH
 
-from btpg.envs import env_map
 
 
 def make(env_name):
+    from btpg.envs import env_map
     return env_map[env_name]()

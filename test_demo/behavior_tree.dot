@@ -1,0 +1,23 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+"995a04c0-32a7-469a-9006-e4ed377d5c85" [fillcolor="#B0FFFF", fontcolor=black, fontsize=20, height=0.01, label=" ? ", shape=box, style=filled, width=0.01];
+"5eebd241-f214-4426-b8cc-f52a9f0e3068" [fillcolor="#FFFF80", fontcolor=black, fontsize=20, label="IsHolding(apple)", shape=ellipse, style=filled];
+"995a04c0-32a7-469a-9006-e4ed377d5c85" -> "5eebd241-f214-4426-b8cc-f52a9f0e3068";
+"ffcb92c4-cb72-433d-8c5b-7949611bde4f" [fillcolor="#FF8080", fontcolor=black, fontsize=20, height=0.01, label="&rarr;", shape=box, style=filled, width=0.01];
+"995a04c0-32a7-469a-9006-e4ed377d5c85" -> "ffcb92c4-cb72-433d-8c5b-7949611bde4f";
+"1e36da08-e71f-414c-91cb-8a24201ad524" [fillcolor="#FFFF80", fontcolor=black, fontsize=20, label="IsHandEmpty()", shape=ellipse, style=filled];
+"ffcb92c4-cb72-433d-8c5b-7949611bde4f" -> "1e36da08-e71f-414c-91cb-8a24201ad524";
+"56541358-b25e-4752-bddf-4f55bdc2fcef" [fillcolor="#B0FFFF", fontcolor=black, fontsize=20, height=0.01, label=" ? ", shape=box, style=filled, width=0.01];
+"ffcb92c4-cb72-433d-8c5b-7949611bde4f" -> "56541358-b25e-4752-bddf-4f55bdc2fcef";
+"e78b29a2-66c7-4e7e-bff1-28030661dc99" [fillcolor="#FF8080", fontcolor=black, fontsize=20, height=0.01, label="&rarr;", shape=box, style=filled, width=0.01];
+"56541358-b25e-4752-bddf-4f55bdc2fcef" -> "e78b29a2-66c7-4e7e-bff1-28030661dc99";
+"5a300bd2-b12f-48e7-b16b-4e659091bfdc" [fillcolor="#FFFF80", fontcolor=black, fontsize=20, label="IsNear(apple)", shape=ellipse, style=filled];
+"e78b29a2-66c7-4e7e-bff1-28030661dc99" -> "5a300bd2-b12f-48e7-b16b-4e659091bfdc";
+"2396bef8-c4d3-4abf-9561-ae7732f48ce0" [fillcolor=lightgreen, fontcolor=black, fontsize=20, label="Grasp(apple)", shape=box, style=filled];
+"e78b29a2-66c7-4e7e-bff1-28030661dc99" -> "2396bef8-c4d3-4abf-9561-ae7732f48ce0";
+"eb112423-682c-402f-8a43-5ee84d67fee8" [fillcolor=lightgreen, fontcolor=black, fontsize=20, label="Walk(apple)", shape=box, style=filled];
+"56541358-b25e-4752-bddf-4f55bdc2fcef" -> "eb112423-682c-402f-8a43-5ee84d67fee8";
+}

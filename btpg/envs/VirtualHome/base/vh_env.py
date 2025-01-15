@@ -2,7 +2,7 @@ import subprocess
 import time
 
 from btpg.envs.base.env import Env
-from btpg.envs.VirtualHome.simulation.unity_simulator import UnityCommunication
+# from btpg.envs.VirtualHome.simulation.unity_simulator import UnityCommunication
 from btpg.utils import ROOT_PATH
 
 import atexit
