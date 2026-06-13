@@ -1,3 +1,21 @@
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Simulators (downloaded separately, see README)
 simulators/virtualhome/*
 simulators/robowaiter/*
+
+# Generated artifacts: keep the output directory but ignore its contents
+/output/*
+!/output/.gitkeep
+!/output/README.md
 /Output/script/

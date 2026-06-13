@@ -64,8 +64,19 @@ class BehaviorTree(ptree.trees.BehaviourTree):
     def print(self):
         print_tree_from_root(self.root)
 
-    def draw(self,file_name="behavior_tree",png_only=False):
-        render_dot_tree(self.root,name=file_name,png_only=png_only)
+    def draw(self, file_name="behavior_tree", target_directory=None, png_only=False):
+        """Render the behavior tree to ``.dot``/``.png``/``.svg`` files.
+
+        Args:
+            file_name: base name (without extension) for the generated files.
+            target_directory: directory to write the files into. Defaults to
+                the current working directory to keep backward compatibility.
+            png_only: when True, only the ``.png`` file is produced.
+        """
+        if target_directory is None:
+            target_directory = os.getcwd()
+        render_dot_tree(self.root, name=file_name,
+                        target_directory=target_directory, png_only=png_only)
 
 
 

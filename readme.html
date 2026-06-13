@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LLM-OBTEA · Behavior Tree Generation from Human Instructions</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f8fb;
+    --surface-2: #eef1f7;
+    --border: #e3e7ef;
+    --text: #1a2233;
+    --muted: #5f6b7a;
+    --accent: #2f5bea;
+    --accent-2: #0ea472;
+    --code-bg: #f4f6fb;
+    --code-ink: #1f2a44;
+    --shadow: 0 8px 30px rgba(28, 42, 88, .08);
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+
+  /* Layout */
+  .wrap { display: flex; max-width: 1180px; margin: 0 auto; }
+  nav {
+    position: sticky; top: 0; align-self: flex-start;
+    width: 240px; height: 100vh; overflow-y: auto;
+    padding: 28px 18px; border-right: 1px solid var(--border);
+  }
+  nav .brand { font-weight: 700; font-size: 18px; margin-bottom: 4px; color: var(--text); }
+  nav .brand span { color: var(--accent); }
+  nav .tag { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+  nav a { display: block; color: var(--muted); padding: 7px 10px; border-radius: 8px; font-size: 14px; }
+  nav a:hover { background: var(--surface-2); color: var(--text); text-decoration: none; }
+  main { flex: 1; min-width: 0; padding: 40px 48px 80px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #eef3ff 0%, #f7f8fb 60%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 36px; margin-bottom: 36px; box-shadow: var(--shadow);
+  }
+  .hero h1 { margin: 0 0 10px; font-size: 30px; line-height: 1.3; }
+  .hero p { margin: 0; color: var(--muted); font-size: 16px; max-width: 760px; }
+  .badges { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    background: #ffffff; border: 1px solid var(--border);
+    color: var(--text); font-size: 12px; padding: 4px 12px; border-radius: 999px;
+  }
+  .badge.accent { border-color: var(--accent); color: var(--accent); background: #eef3ff; }
+
+  section { margin-bottom: 44px; scroll-margin-top: 20px; }
+  h2 { font-size: 22px; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 0; }
+  h2 .num { color: var(--accent); margin-right: 8px; }
+  h3 { font-size: 17px; color: var(--accent-2); margin: 26px 0 10px; }
+
+  pre {
+    background: var(--code-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px; overflow-x: auto; font-size: 13.5px;
+  }
+  pre code { color: var(--code-ink); }
+  p code, li code, td code {
+    background: var(--surface-2); border: 1px solid var(--border);
+    padding: 1px 6px; border-radius: 6px; font-size: 13px; color: #b8174f;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; }
+  th { background: var(--surface-2); }
+  tr:nth-child(even) td { background: var(--surface); }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow);
+  }
+  .card h4 { margin: 0 0 8px; font-size: 15px; color: var(--accent); }
+  .card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+
+  .steps { counter-reset: step; list-style: none; padding: 0; }
+  .steps li { position: relative; padding: 4px 0 4px 42px; margin-bottom: 10px; }
+  .steps li::before {
+    counter-increment: step; content: counter(step);
+    position: absolute; left: 0; top: 2px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: #ffffff; font-weight: 700;
+    display: grid; place-items: center; font-size: 14px;
+  }
+
+  figure { margin: 18px 0; text-align: center; }
+  figure img {
+    max-width: 100%; border: 1px solid var(--border);
+    border-radius: 10px; background: #fff; padding: 6px; box-shadow: var(--shadow);
+  }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+  .note {
+    border-left: 3px solid var(--accent); background: var(--surface);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; color: var(--muted); font-size: 14px;
+  }
+  footer { border-top: 1px solid var(--border); padding-top: 20px; color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 860px) {
+    nav { display: none; }
+    main { padding: 24px 18px 60px; }
+    .hero { padding: 28px 22px; }
+    .hero h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="brand">LLM-<span>OBTEA</span></div>
+    <div class="tag">IJCAI 2024 · Behavior Tree Planning</div>
+    <a href="#overview">概览 Overview</a>
+    <a href="#features">核心特性 Features</a>
+    <a href="#install">安装 Installation</a>
+    <a href="#structure">目录结构 Structure</a>
+    <a href="#usage">快速开始 Usage</a>
+    <a href="#example">代码示例 Example</a>
+    <a href="#simulation">仿真 Simulation</a>
+    <a href="#citation">引用 Citation</a>
+    <a href="#license">许可 License</a>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <h1>LLM-OBTEA：从人类指令到最优行为树</h1>
+      <p>
+        一个两阶段框架：利用大型语言模型（LLM）理解高层指令中的意图，再通过最优行为树扩展算法
+        （OBTEA / HOBTEA）构建高效、可靠且面向目标的行为树，桥接「意图理解」与「最优行为规划」。
+      </p>
+      <div class="badges">
+        <span class="badge accent">IJCAI 2024</span>
+        <span class="badge">Python 3.10</span>
+        <span class="badge">MIT License</span>
+        <span class="badge">VirtualHome · RoboWaiter</span>
+      </div>
+    </div>
+
+    <section id="overview">
+      <h2><span class="num">01</span>概览 Overview</h2>
+      <p>
+        本项目（精简版）配套论文
+        <em>Integrating Intent Understanding and Optimal Behavior Planning for Behavior Tree
+        Generation from Human Instructions</em>（IJCAI&nbsp;2024）。
+        它将目标表示为一阶逻辑中的良构公式（well-formed formula），从而在自然语言指令与行为树规划之间建立桥梁。
+      </p>
+      <figure>
+        <img src="images/framework.png" alt="LLM-OBTEA framework" />
+        <figcaption>整体框架：指令理解 → 目标公式化 → 最优行为树扩展</figcaption>
+      </figure>
+    </section>
+
+    <section id="features">
+      <h2><span class="num">02</span>核心特性 Features</h2>
+      <div class="cards">
+        <div class="card">
+          <h4>意图理解</h4>
+          <p>基于 LLM 将自然语言指令解析为目标、关键谓词与关键物体。</p>
+        </div>
+        <div class="card">
+          <h4>最优规划</h4>
+          <p>OBTEA / HOBTEA 算法生成代价最优、可反应式执行的行为树。</p>
+        </div>
+        <div class="card">
+          <h4>多场景环境</h4>
+          <p>内置 VirtualHome、RoboWaiter、RobotHow 等服务机器人场景。</p>
+        </div>
+        <div class="card">
+          <h4>可视化</h4>
+          <p>一键导出 <code>.btml</code> / <code>.dot</code> / <code>.png</code> / <code>.svg</code> 至统一 <code>output/</code>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="install">
+      <h2><span class="num">03</span>安装 Installation</h2>
+      <h3>创建 conda 环境</h3>
+      <pre><code>conda create --name BTPG python=3.10
+conda activate BTPG</code></pre>
+      <h3>安装 BTPG</h3>
+      <pre><code>cd OBTEA-demo
+pip install -e .</code></pre>
+      <h3>下载仿真器（可选，目前仅在 Windows 上测试）</h3>
+      <table>
+        <tr><th>仿真器</th><th>说明</th></tr>
+        <tr><td>VirtualHome</td><td><a href="http://virtual-home.org/release/simulator/v2.0/v2.3.0/windows_exec.zip">Windows v2.3.0</a>（另有 Linux / macOS 版）</td></tr>
+        <tr><td>RoboWaiter</td><td>下载 <code>CafeSimulator.exe</code> 后运行以打开空场景，等待代码生成场景并交互。</td></tr>
+      </table>
+      <div class="note">未安装仿真器也可运行规划与可视化部分，仅「真实仿真演示」需要仿真器。</div>
+    </section>
+
+    <section id="structure">
+      <h2><span class="num">04</span>目录结构 Structure</h2>
+      <pre><code>OBTEA-demo/
+├── btpg/                 # 核心库
+│   ├── agent/            # 智能体配置
+│   ├── algos/            # 算法
+│   │   ├── bt_planning/  # 行为树规划：ReactivePlanning / BTExpansion / OBTEA / HOBTEA
+│   │   └── llm_client/   # LLM 意图理解客户端
+│   ├── behavior_tree/    # 行为树引擎与节点定义
+│   ├── envs/             # 场景环境（VirtualHome / RoboWaiter / RobotHow ...）
+│   └── utils/            # 工具与辅助函数（含统一 output 路径）
+├── docs/                 # 文档（项目说明 + HTML README）
+├── images/               # README 插图
+├── output/               # 统一生成物目录（btml/dot/png/svg，已被 git 忽略）
+├── test_demo/            # 自定义任务最小示例
+│   └── run_demo_task.py
+├── test_exp/             # 实验脚本
+│   ├── main.py           # 交互式演示入口（easy / medium / hard）
+│   ├── main_VH_easy.py
+│   ├── main_VH_medium.py
+│   ├── main_VH_hard.py
+│   └── data/             # 测试数据
+├── requirements.txt
+├── setup.py
+└── README.md</code></pre>
+    </section>
+
+    <section id="usage">
+      <h2><span class="num">05</span>快速开始 Usage</h2>
+      <ul class="steps">
+        <li>下载并解压仿真器（如需仿真），放入 <code>simulators/virtualhome/</code>。</li>
+        <li>运行交互式演示，根据提示选择 easy / medium / hard 任务：
+          <pre><code>python test_exp/main.py</code></pre>
+        </li>
+        <li>查看 <code>output/</code> 目录中生成的行为树文件与可视化图片。</li>
+      </ul>
+      <p>若想为自定义任务生成行为树，参考最小示例 <code>test_demo/run_demo_task.py</code>。</p>
+    </section>
+
+    <section id="example">
+      <h2><span class="num">06</span>代码示例 Example</h2>
+      <pre><code>import time
+from btpg import BehaviorTree
+from btpg.utils.tools import setup_environment
+from btpg.utils.path import get_output_path
+from btpg.algos.bt_planning.main_interface import BTExpInterface
+from btpg.algos.llm_client.tools import goal_transfer_str
+
+# 1. 初始化环境与当前状态
+env, cur_cond_set = setup_environment("VH")
+goal_str = "IsIn_milk_fridge & IsClose_fridge"
+goal_set = goal_transfer_str(goal_str)
+
+# 2. 行为树规划
+algo = BTExpInterface(env.behavior_lib, cur_cond_set=cur_cond_set,
+                      selected_algorithm="hobtea", mode="big",
+                      time_limit=15, output_just_best=True)
+algo.process(goal_set)
+ptml_string, cost, expanded_num = algo.post_process()
+
+# 3. 保存并可视化（统一写入 output/）
+output_dir = get_output_path()
+btml_path = f"{output_dir}/tree.btml"
+with open(btml_path, "w") as f:
+    f.write(ptml_string)
+
+bt = BehaviorTree(btml_path, env.behavior_lib)
+bt.print()
+bt.draw(target_directory=output_dir)   # 生成 .dot / .png / .svg
+
+# 4. 执行行为树
+error, state, act_num, current_cost, record_act_ls, ticks = \
+    algo.execute_bt(goal_set[0], cur_cond_set, verbose=False)
+print("cost:", current_cost, "expanded:", expanded_num)</code></pre>
+    </section>
+
+    <section id="simulation">
+      <h2><span class="num">07</span>仿真 Simulation</h2>
+      <h3>RoboWaiter — 咖啡厅服务机器人</h3>
+      <p>目标：<code>On(Coffee,Table3) &amp; Active(AC)</code></p>
+      <figure><img src="images/RW.svg" alt="RoboWaiter behavior tree" /></figure>
+      <h3>VirtualHome — 家庭服务机器人</h3>
+      <p>目标：<code>IsIn(bananas,fridge) &amp; IsClose(fridge)</code></p>
+      <figure><img src="images/VH.svg" alt="VirtualHome behavior tree" /></figure>
+    </section>
+
+    <section id="citation">
+      <h2><span class="num">08</span>引用 Citation</h2>
+      <p>
+        本仓库配套我们的 <strong>IJCAI&nbsp;2024</strong> 论文。如果本项目对你的研究或开发有帮助，欢迎引用：
+      </p>
+      <div class="note">
+        Xinglin Chen, Yishuai Cai, Yunxin Mao, Minglong Li, Wenjing Yang, Weixia Xu, and Ji Wang.
+        <em>Integrating Intent Understanding and Optimal Behavior Planning for Behavior Tree Generation
+        from Human Instructions.</em> In <em>Proceedings of the 33rd International Joint Conference on
+        Artificial Intelligence (IJCAI)</em>, pages 6832–6840, 2024.
+      </div>
+      <pre><code>@inproceedings{chen2024obtea,
+  title     = {Integrating Intent Understanding and Optimal Behavior Planning for Behavior Tree Generation from Human Instructions},
+  author    = {Chen, Xinglin and Cai, Yishuai and Mao, Yunxin and Li, Minglong and Yang, Wenjing and Xu, Weixia and Wang, Ji},
+  booktitle = {Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI)},
+  pages     = {6832--6840},
+  year      = {2024},
+  doi       = {10.24963/ijcai.2024/755},
+  url       = {https://www.ijcai.org/proceedings/2024/0755.pdf}
+}</code></pre>
+      <p>
+        相关链接：<a href="https://www.ijcai.org/proceedings/2024/0755.pdf">Paper (IJCAI)</a> ·
+        <a href="https://arxiv.org/abs/2405.07474">arXiv:2405.07474</a> ·
+        <a href="https://doi.org/10.24963/ijcai.2024/755">DOI</a>
+      </p>
+    </section>
+
+    <section id="license">
+      <h2><span class="num">09</span>许可 License</h2>
+      <p>本项目基于 <strong>MIT License</strong> 开源，详见仓库根目录的 <a href="LICENSE">LICENSE</a> 文件。</p>
+      <p style="color:var(--muted);font-size:14px;">Copyright © 2024 DIDS-EI. All rights reserved.</p>
+    </section>
+
+    <footer>
+      LLM-OBTEA · © 2024 DIDS-EI · 基于 MIT License 开源 ·
+      <a href="https://github.com/DIDS-EI/OBTEA-demo">GitHub</a>
+    </footer>
+  </main>
+</div>
+</body>
+</html>

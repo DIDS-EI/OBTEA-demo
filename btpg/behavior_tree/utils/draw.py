@@ -329,6 +329,9 @@ def render_dot_tree(root: behaviour.Behaviour,
     else:
         write_dict = {"dot": graph.write, "png": graph.write_png, "svg": graph.write_svg}
 
+    # Make sure the target directory exists before writing any artifact.
+    os.makedirs(target_directory, exist_ok=True)
+
     for extension, writer in write_dict.items():
         filename = filename_wo_extension + '.' + extension
         pathname = os.path.join(target_directory, filename)

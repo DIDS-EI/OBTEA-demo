@@ -1,9 +1,0 @@
-selector
-    cond IsHolding(apple)
-    sequence
-        cond IsHandEmpty()
-        selector
-            sequence
-                cond IsNear(apple)
-                act Grasp(apple)
-            act Walk(apple)
