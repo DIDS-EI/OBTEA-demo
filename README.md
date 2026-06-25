@@ -7,6 +7,15 @@
 
 A two-stage framework that (1) uses **Large Language Models** to understand the intent behind high-level human instructions and (2) builds efficient, goal-specific behavior trees through the **Optimal Behavior Tree Expansion Algorithm (OBTEA / HOBTEA)**. Goals are expressed as well-formed formulas in first-order logic, bridging *intent understanding* and *optimal behavior planning*.
 
+## 📰 News
+
+- **[2026-06]** 🎉 **MRBTP-demo is now online!** A slim, tutorial-friendly version of MRBTP — the **multi-robot** extension of our behavior-tree planning line of work — has been released at <https://github.com/Caiyishuai/MRBTP-demo>. Highly recommended as a quick-start for multi-robot BT planning.
+- **[2025-02]** 🏆 **MRBTP** (AAAI 2025 **Oral**, Top 4.6%) has been released, extending OBTEA to multi-robot collaboration with sound & complete guarantees.
+  - Project page: <https://dids-ei.github.io/Project/MRBTP/>
+  - Code: <https://github.com/DIDS-EI/MRBTP>
+  - Paper: <https://arxiv.org/abs/2502.18072>
+- **[2025-01]** ✨ This slim demo version of LLM-OBTEA is publicly available. For the full version, see <https://github.com/DIDS-EI/LLM-OBTEA>.
+
 > ✨ This is the slim version, hosted at <https://github.com/DIDS-EI/OBTEA-demo>.
 > To generate a behavior tree for a custom task, start from [`test_demo/run_demo_task.py`](test_demo/run_demo_task.py).
 
