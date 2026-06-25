@@ -13,6 +13,7 @@ A two-stage framework that (1) uses **Large Language Models** to understand the 
 - **[2025-02]** 🏆 **MRBTP** (AAAI 2025 **Oral**, Top 4.6%) has been released, extending OBTEA to multi-robot collaboration with sound & complete guarantees.
   - Project page: <https://dids-ei.github.io/Project/MRBTP/>
   - Code: <https://github.com/DIDS-EI/MRBTP>
+  - Demo / Tutorial: <https://github.com/Caiyishuai/MRBTP-demo>
   - Paper: <https://arxiv.org/abs/2502.18072>
 - **[2025-01]** ✨ This slim demo version of LLM-OBTEA is publicly available. For the full version, see <https://github.com/DIDS-EI/LLM-OBTEA>.
 
