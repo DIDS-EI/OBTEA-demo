@@ -9,11 +9,11 @@ A two-stage framework that (1) uses **Large Language Models** to understand the 
 
 ## 📰 News
 
-- **[2026-06]** 🎉 **MRBTP-demo is now online!** A slim, tutorial-friendly version of MRBTP — the **multi-robot** extension of our behavior-tree planning line of work — has been released at <https://github.com/Caiyishuai/MRBTP-demo>. Highly recommended as a quick-start for multi-robot BT planning.
+- **[2026-06]** 🎉 **MRBTP-demo is now online!** A slim, tutorial-friendly version of MRBTP — the **multi-robot** extension of our behavior-tree planning line of work — has been released at <https://github.com/DIDS-EI/MRBTP-demo>. Highly recommended as a quick-start for multi-robot BT planning.
 - **[2025-02]** 🏆 **MRBTP** (AAAI 2025 **Oral**, Top 4.6%) has been released, extending OBTEA to multi-robot collaboration with sound & complete guarantees.
   - Project page: <https://dids-ei.github.io/Project/MRBTP/>
   - Code: <https://github.com/DIDS-EI/MRBTP>
-  - Demo / Tutorial: <https://github.com/Caiyishuai/MRBTP-demo>
+  - Demo / Tutorial: <https://github.com/DIDS-EI/MRBTP-demo>
   - Paper: <https://arxiv.org/abs/2502.18072>
 - **[2025-01]** ✨ This slim demo version of LLM-OBTEA is publicly available. For the full version, see <https://github.com/DIDS-EI/LLM-OBTEA>.
 
